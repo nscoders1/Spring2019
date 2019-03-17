@@ -34,9 +34,17 @@
     // JavaScript code goes here
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
-    drawRect(20, 30);
-    drawRect(120, 130);
-
+    var x = 0;
+    var y = 0;
+    var dx = 1;
+    var dy = 1;
+    var w = canvas.width;
+    var h = canvas.height;
+    while (h > y) {
+      drawRect(x, y);
+      x = x + dx;
+      y = y + dy;
+    }
   </script>
 
 </body>
