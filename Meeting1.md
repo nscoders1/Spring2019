@@ -7,7 +7,7 @@
 3. [Breakout](https://end3r.github.io/Gamedev-Canvas-Content-Kit/demos/lesson10.html) by Andrzej Mazur
 
 
-# Leassons
+# Lessons
 
 1. Login to github and clone https://github.com/nscoders1/Spring2019
    1. We'll be doing a lot of work in the web browser
