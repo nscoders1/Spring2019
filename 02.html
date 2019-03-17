@@ -9,11 +9,16 @@
   // JavaScript code goes here
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
-  ctx.beginPath();
-  ctx.rect(20, 40, 50, 50);
-  ctx.fillStyle = "red";
-  ctx.fill();
-  ctx.closePath();
+  drawRect(20,30);
+  drawRect(120,130);
+
+  function drawRect(x,y) {
+    ctx.beginPath();
+    ctx.rect(x, y, 50, 50);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.closePath();
+  }
 </script>
 
 </html>
