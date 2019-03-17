@@ -1,6 +1,11 @@
 
 # Introduction & Plans -- Dave M.C.'s 
 
+# Examples of our Destination
+1. [Space Invaders](http://annotated-code.maryrosecook.com/space-invaders/index.html) by Mary Rose Cook
+2. [Pong](https://nscoders1.github.io/pong/game.html) by Marc-André Cournoyer
+3. [Breakout](https://end3r.github.io/Gamedev-Canvas-Content-Kit/demos/lesson10.html) by Andrzej Mazur
+
 
 # Leassons
 
