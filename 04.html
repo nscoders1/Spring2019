@@ -16,15 +16,22 @@
   setInterval(gameStep, 1000);
 
   function gameStep() {
+     console.log('clear');
+     drawRect(0,0,"white",50,50);
      x = x + dx;
      y = y + dy;
+     console.log('red');
      drawRect(x,y);
   }
 
   function drawRect(x,y) {
+    drawRect(x,y,"red", 50,50);
+  }
+
+  function drawRect(x,y,color, h,w) {
     ctx.beginPath();
-    ctx.rect(x, y, 50, 50);
-    ctx.fillStyle = "red";
+    ctx.rect(x, y, h, w);
+    ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
   }
