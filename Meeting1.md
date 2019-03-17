@@ -30,7 +30,7 @@ After the `canvas.getContext("2d");` line add a call to your new function.  It s
     drawRect(20, 30);
   ```
 
-3. But it always puts the rectangle in the same place, so let's add variables:
+4. But it always puts the rectangle in the same place, so let's add variables:
 ```
   function drawRect(x,y) {
     ctx.beginPath();
