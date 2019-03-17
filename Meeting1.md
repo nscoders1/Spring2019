@@ -1,4 +1,30 @@
 
+# Introduction & Plans -- Dave M.C.'s 
 
+
+# Leassons
+
+1. Login to github and clone https://github.com/nscoders1/Spring2019
+   1. We'll be doing a lot of work in the web browser
 1. We want students to understand https://nscoders1.github.io/Spring2019/1.html 
+   1. Source at https://github.com/nscoders1/Spring2019/blob/master/1.html
 2. Let's create a function for drawing the rectangle: 
+```
+  function drawRect() {
+    ctx.beginPath();
+    ctx.rect(20, 40, 50, 50);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.closePath();
+  }
+  ```
+3. But it always puts the rectangle in the same place, so let's add variables:
+```
+  function drawRect(x,y) {
+    ctx.beginPath();
+    ctx.rect(x, y, 50, 50);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.closePath();
+  }
+  ```
