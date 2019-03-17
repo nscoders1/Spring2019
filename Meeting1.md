@@ -23,6 +23,13 @@
     ctx.closePath();
   }
   ```
+
+After the `canvas.getContext("2d");` line add a call to your new function.  It should look like this:
+  ```
+    var ctx = canvas.getContext("2d");
+    drawRect(20, 30);
+  ```
+
 3. But it always puts the rectangle in the same place, so let's add variables:
 ```
   function drawRect(x,y) {
@@ -33,3 +40,12 @@
     ctx.closePath();
   }
   ```
+After the `drawRect(20, 30);` line add a call to your new function a second time with different parameters.  
+It should look like this:
+  ```
+    var ctx = canvas.getContext("2d");
+    drawRect(20, 30);
+    drawRect(120, 130);
+  ```
+
+
