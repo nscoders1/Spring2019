@@ -1,10 +1,15 @@
-<html> 
-	<head><title>01</title></head>
-	<body><h1>Hello world!</h1>
-	
-<canvas id="myCanvas" width="480" height="320"></canvas>
-	
-	</body>
+<html>
+
+<head>
+  <title>01</title>
+</head>
+
+<body>
+  <h1>Hello world!</h1>
+
+  <canvas id="myCanvas" width="480" height="320"></canvas>
+
+</body>
 <script>
   // JavaScript code goes here
   var canvas = document.getElementById("myCanvas");
@@ -16,17 +21,14 @@
   setInterval(gameStep, 1000);
 
   function gameStep() {
-     x = x + dx;
-     y = y + dy;
-     drawRect(x,y);
+    x = x + dx;
+    y = y + dy;
+    drawRect(x, y);
   }
 
-  function drawRect(x,y) {
-    ctx.beginPath();
-    ctx.rect(x, y, 50, 50);
+  function drawRect(x, y) {
     ctx.fillStyle = "red";
-    ctx.fill();
-    ctx.closePath();
+    ctx.fillRect(x, y, 50, 50);
   }
 </script>
 

@@ -24,11 +24,8 @@
 
   <script>
     function drawRect(x, y) {
-      ctx.beginPath();
-      ctx.rect(x, y, 50, 50);
       ctx.fillStyle = "red";
-      ctx.fill();
-      ctx.closePath();
+      ctx.fillRect(x, y, 50, 50);
     }
 
     // JavaScript code goes here
