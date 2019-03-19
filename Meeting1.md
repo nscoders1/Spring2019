@@ -16,11 +16,8 @@
 2. Let's create a function for drawing the rectangle: 
 ```
   function drawRect() {
-    ctx.beginPath();
-    ctx.rect(20, 40, 50, 50);
     ctx.fillStyle = "red";
-    ctx.fill();
-    ctx.closePath();
+    ctx.fillRect(20,40,50,50);
   }
   ```
 
@@ -33,11 +30,8 @@ After the `canvas.getContext("2d");` line add a call to your new function.  It s
 4. But it always puts the rectangle in the same place, so let's add variables:
 ```
   function drawRect(x,y) {
-    ctx.beginPath();
-    ctx.rect(x, y, 50, 50);
     ctx.fillStyle = "red";
-    ctx.fill();
-    ctx.closePath();
+    ctx.fillRect(x,y,50,50);
   }
   ```
 After the `drawRect(20, 30);` line add a call to your new function a second time with different parameters.  
