@@ -31,6 +31,7 @@
     var brickOffsetLeft = 30;
     var score = 0;
     var lives = 3;
+    var running = true;
 
     var bricks = [];
     // Every brick has a location & status (1 is present, 0 is gone)
@@ -50,7 +51,12 @@
         }
         else if(e.keyCode == 37) {
             leftPressed = true;
-        }
+	} else if (e.keyCode == 32) {
+	    running = !running;
+	    if (running) {
+            	requestAnimationFrame(draw);
+	    }
+	}
     }
     function keyUpHandler(e) {
         if(e.keyCode == 39) {
@@ -114,6 +120,7 @@
     }
 
     function draw() {
+	if (!running) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBricks();
         drawBall();
