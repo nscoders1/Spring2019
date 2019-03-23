@@ -33,6 +33,7 @@
     var lives = 3;
 
     var bricks = [];
+    // Every brick has a location & status (1 is present, 0 is gone)
     for(c=0; c<brickColumnCount; c++) {
         bricks[c] = [];
         for(r=0; r<brickRowCount; r++) {
@@ -65,18 +66,18 @@
                 var b = bricks[c][r];
                 if(b.status == 1) {
                     if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-                        dy = -dy;
-                        b.status = 0;
-                        score++;
+                        dy = -dy; // Bounce the ball backwards
+                        b.status = 0; // Remove the brick
+                        score++; 
                         if(score == brickRowCount*brickColumnCount) {
                             alert("YOU WIN, CONGRATS!"); // Alert waits for person to press ok 
-                            document.location.reload();
+                            document.location.reload(); // reload restarts the game
                         }
-                    }
-                }
-            }
-        }
-    }
+                    }// if collision
+                }// if brick is present (status equals 1)
+            }// each row 
+        }// each column
+    }// collision Detection
 
     function drawBall() {
         ctx.fillStyle = "red";
@@ -89,6 +90,7 @@
     function drawBricks() {
         for(c=0; c < brickColumnCount; c++) {
             for(r=0; r < brickRowCount; r++) {
+		// Only draw bricks that are present -- status equals 1
                 if(bricks[c][r].status == 1) {
                     var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;
                     var brickY = (c*(brickHeight+brickPadding))+brickOffsetTop;
@@ -121,10 +123,10 @@
         collisionDetection();
 
         if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-            dx = -dx;
+            dx = -dx; // Bounce off side wall
         }
         if(y + dy < ballRadius) {
-            dy = -dy;
+            dy = -dy; // Bounce off top wall
         }
         else if(y + dy > canvas.height-ballRadius) {
             if(x > paddleX && x < paddleX + paddleWidth) {
