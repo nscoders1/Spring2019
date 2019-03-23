@@ -8,9 +8,11 @@
 <body>
 
 <canvas id="myCanvas" width="480" height="320"></canvas>
+<p> <button id="pauseButton">Pause</button></p>
 
 <script>
     var canvas = document.getElementById("myCanvas");
+    var pauseButton = document.getElementById("pauseButton");
     var ctx = canvas.getContext("2d");
     var ballRadius = 10;
     var x = canvas.width/2;
@@ -44,19 +46,23 @@
 
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
+    pauseButton.onclick = pause;
 
+    function pause() {
+       // console.log(`pause: running=${running}`);
+       running = !running;
+       if (running) {
+         requestAnimationFrame(draw);
+       }
+       canvas.focus(); // does not help :-( 
+    }
     function keyDownHandler(e) {
         if(e.keyCode == 39) {
             rightPressed = true;
         }
         else if(e.keyCode == 37) {
             leftPressed = true;
-	} else if (e.keyCode == 32) {
-	    running = !running;
-	    if (running) {
-            	requestAnimationFrame(draw);
-	    }
-	}
+	} 
     }
     function keyUpHandler(e) {
         if(e.keyCode == 39) {
@@ -64,7 +70,9 @@
         }
         else if(e.keyCode == 37) {
             leftPressed = false;
-        }
+        } else if (e.keyCode == 32) {
+	    pause();
+	}
     }
     function collisionDetection() {
         for(c=0; c<brickColumnCount; c++) {
